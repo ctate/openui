@@ -23,6 +23,23 @@ export const metadata: Metadata = {
   },
 };
 
+function enhanceTableStyles(htmlContent: string): string {
+  const enhancedHtml = htmlContent
+    .replace(/<table>/g, '<table class="w-full border-collapse mb-8">')
+    .replace(/<thead>/g, '<thead class="bg-gray-100 dark:bg-gray-800">')
+    .replace(
+      /<th>/g,
+      '<th class="p-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300 border-b dark:border-gray-700">',
+    )
+    .replace(
+      /<td>/g,
+      '<td class="p-3 text-sm text-gray-600 dark:text-gray-400 border-b dark:border-gray-700">',
+    )
+    .replace(/<tr>/g, '<tr class="hover:bg-gray-50 dark:hover:bg-gray-750">');
+
+  return enhancedHtml;
+}
+
 export default async function SpecPage() {
   const markdownContent = fs.readFileSync(
     path.join(process.cwd(), "versions", "draft-01.md"),
@@ -42,6 +59,7 @@ export default async function SpecPage() {
     .process(contentStartingFromIntroduction);
 
   const htmlContent = processedContent.toString();
+  const enhancedHtmlContent = enhanceTableStyles(htmlContent);
 
   return (
     <div className="min-h-screen">
@@ -49,7 +67,7 @@ export default async function SpecPage() {
         <SpecTitle title="OpenUI Specification" showBadge={true} />
         <div
           className="prose dark:prose-invert max-w-none"
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
+          dangerouslySetInnerHTML={{ __html: enhancedHtmlContent }}
         />
       </main>
     </div>
