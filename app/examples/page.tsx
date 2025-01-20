@@ -50,7 +50,7 @@ export default function ExamplesPage() {
           <h2 className="text-2xl font-semibold mb-4">
             Explore UI Library Specifications
           </h2>
-          <p className="text-gray-300 mb-6">
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
             Discover how different UI libraries implement the OpenUI
             specification. Each example showcases the standardized component
             definitions and properties.
@@ -61,10 +61,10 @@ export default function ExamplesPage() {
               placeholder="Search examples..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 bg-gray-900 border-gray-700 text-white"
+              className="pl-10 bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
             />
             <Search
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500"
               size={20}
             />
           </div>
@@ -74,12 +74,16 @@ export default function ExamplesPage() {
           {filteredSpecs.map((spec) => (
             <li
               key={spec.title}
-              className="border border-gray-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-gray-500 hover:shadow-lg hover:shadow-gray-800/50"
+              className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-gray-400 dark:hover:border-gray-500 hover:shadow-lg hover:shadow-gray-200/50 dark:hover:shadow-gray-800/50"
             >
               <Link href={spec.url} className="p-6 h-full flex flex-col">
-                <h3 className="text-xl font-semibold mb-2">{spec.title}</h3>
-                <p className="text-gray-400 flex-grow">{spec.description}</p>
-                <span className="text-blue-400 mt-4 inline-block">
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                  {spec.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 flex-grow">
+                  {spec.description}
+                </p>
+                <span className="text-blue-600 dark:text-blue-400 mt-4 inline-block">
                   View Specification &rarr;
                 </span>
               </Link>
@@ -88,7 +92,7 @@ export default function ExamplesPage() {
         </ul>
 
         {filteredSpecs.length === 0 && (
-          <p className="text-center text-gray-400 mt-8">
+          <p className="text-center text-gray-600 dark:text-gray-400 mt-8">
             No examples found matching your search.
           </p>
         )}
