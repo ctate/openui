@@ -2,7 +2,7 @@ import Landing from "@/components/landing";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "OpenUI - AI-Native UI Standardization",
+  title: "OpenUI - AI-Native Specification for UIs",
   description:
     "OpenUI is an AI-native specification for standardizing UI components across different libraries and frameworks.",
   openGraph: {

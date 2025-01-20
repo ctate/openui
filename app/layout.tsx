@@ -6,7 +6,7 @@ import { Header } from "@/components/header";
 
 export const metadata: Metadata = {
   title: {
-    default: "OpenUI - AI-Native UI Standardization",
+    default: "OpenUI - AI-Native Specification for UIs",
     template: "%s | OpenUI",
   },
   description: "AI-Native Specification for UIs",
