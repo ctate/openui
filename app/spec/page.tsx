@@ -1,4 +1,59 @@
 import { SpecTitle } from "@/components/spec-title";
+import SchemaTable from "@/components/schema-table";
+
+const schema = {
+  $schema: { type: "string" },
+  type: { type: "string" },
+  properties: {
+    type: "object",
+    properties: {
+      name: { type: "string" },
+      version: { type: "string" },
+      description: { type: "string" },
+      components: {
+        type: "object",
+        patternProperties: {
+          "^[A-Za-z][A-Za-z0-9]*$": {
+            type: "object",
+            properties: {
+              description: { type: "string" },
+              props: {
+                type: "object",
+                patternProperties: {
+                  "^[A-Za-z][A-Za-z0-9]*$": {
+                    type: "object",
+                    properties: {
+                      type: { type: "string" },
+                      description: { type: "string" },
+                      required: { type: "boolean" },
+                      default: { type: "any" },
+                      enum: { type: "array" },
+                    },
+                    required: ["type", "description"],
+                  },
+                },
+              },
+              events: {
+                type: "object",
+                patternProperties: {
+                  "^on[A-Z][A-Za-z0-9]*$": {
+                    type: "object",
+                    properties: {
+                      description: { type: "string" },
+                    },
+                    required: ["description"],
+                  },
+                },
+              },
+            },
+            required: ["description", "props"],
+          },
+        },
+      },
+    },
+    required: ["name", "version", "description", "components"],
+  },
+};
 
 export default function SpecPage() {
   return (
@@ -37,60 +92,7 @@ export default function SpecPage() {
             <p className="mb-4">
               The OpenUI specification follows this schema:
             </p>
-            <pre className="bg-gray-800 p-4 rounded-lg overflow-x-auto">
-              <code className="text-sm">
-                {`{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "name": { "type": "string" },
-    "version": { "type": "string" },
-    "description": { "type": "string" },
-    "components": {
-      "type": "object",
-      "patternProperties": {
-        "^[A-Za-z][A-Za-z0-9]*$": {
-          "type": "object",
-          "properties": {
-            "description": { "type": "string" },
-            "props": {
-              "type": "object",
-              "patternProperties": {
-                "^[A-Za-z][A-Za-z0-9]*$": {
-                  "type": "object",
-                  "properties": {
-                    "type": { "type": "string" },
-                    "description": { "type": "string" },
-                    "required": { "type": "boolean" },
-                    "default": { },
-                    "enum": { "type": "array" }
-                  },
-                  "required": ["type", "description"]
-                }
-              }
-            },
-            "events": {
-              "type": "object",
-              "patternProperties": {
-                "^on[A-Z][A-Za-z0-9]*$": {
-                  "type": "object",
-                  "properties": {
-                    "description": { "type": "string" }
-                  },
-                  "required": ["description"]
-                }
-              }
-            }
-          },
-          "required": ["description", "props"]
-        }
-      }
-    }
-  },
-  "required": ["name", "version", "description", "components"]
-}`}
-              </code>
-            </pre>
+            <SchemaTable schema={schema} />
           </section>
 
           <section>
