@@ -1,8 +1,14 @@
-import { ExternalLink } from "lucide-react";
+"use client";
+
+import { ExternalLink, Menu } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import { MobileMenu } from "./mobile-menu";
 
 export function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <header className="bg-white text-black py-6">
       <div className="container flex justify-between items-center mx-auto px-4">
@@ -18,7 +24,7 @@ export function Header() {
             OpenUI
           </Link>
         </h1>
-        <nav>
+        <nav className="hidden md:block">
           <ul className="flex gap-4">
             <li>
               <Link href="/">Home</Link>
@@ -41,7 +47,18 @@ export function Header() {
             </li>
           </ul>
         </nav>
+        <button
+          className="md:hidden"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          <Menu size={24} />
+        </button>
       </div>
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+      />
     </header>
   );
 }
