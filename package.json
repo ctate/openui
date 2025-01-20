@@ -55,9 +55,13 @@
     "react-resizable-panels": "^2.1.7",
     "react-syntax-highlighter": "^15.5.0",
     "recharts": "^2.15.0",
+    "rehype-stringify": "^10.0.1",
     "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.1",
     "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7",
+    "unified": "^11.0.5",
     "vaul": "^1.1.2",
     "yaml": "^2.5.1"
   },
