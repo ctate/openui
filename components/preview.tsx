@@ -31,7 +31,9 @@ function Content({ spec }: { spec: Spec }) {
               }}
               type="button"
             >
-              <div className="text-lg font-semibold">{componentName}</div>
+              <div className="text-lg font-semibold text-black dark:text-white">
+                {componentName}
+              </div>
               <div className="text-gray-600 dark:text-gray-400">
                 {component.description}
               </div>
