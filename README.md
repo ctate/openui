@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://specui.org">
+<a href="https://openuispec.org">
   <img height="120" src="logo.png">
 </a>
 
@@ -8,7 +8,7 @@
 
 Standardize UI libraries and Design Systems
 
-[![License](https://img.shields.io/github/license/specui/specui.svg?style=flat-square)](https://github.com/specui/specui/blob/mistress/LICENSE)
+[![License](https://img.shields.io/github/license/ctate/openui.svg?style=flat-square)](https://github.com/ctate/openui/blob/main/LICENSE)
 
 </div>
 
