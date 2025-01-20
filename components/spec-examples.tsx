@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
@@ -29,7 +31,7 @@ const librarySpecs = {
   },
 };
 
-export function SampleSpecsSection() {
+export function SpecExamples() {
   const [activeLibrary, setActiveLibrary] = useState("shadcn/ui");
   const [copiedStates, setCopiedStates] = useState<Record<string, boolean>>({});
 
@@ -47,7 +49,7 @@ export function SampleSpecsSection() {
 
   return (
     <section className="mb-12">
-      <h2 className="text-2xl font-semibold mb-4">Sample OpenUI Specs</h2>
+      <h2 className="text-2xl font-semibold mb-4">OpenUI Examples</h2>
       <p className="mb-4">
         Toggle between different UI libraries to see how OpenUI standardizes
         their component specifications:
@@ -87,6 +89,7 @@ export function SampleSpecsSection() {
                 onClick={() => copyToClipboard(library.spec, libraryName)}
                 className="absolute top-2 right-2 p-2 bg-gray-800 rounded-md hover:bg-gray-700 transition-colors"
                 aria-label="Copy to clipboard"
+                type="button"
               >
                 {copiedStates[libraryName] ? (
                   <Check className="h-5 w-5 text-green-500" />

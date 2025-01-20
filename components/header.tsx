@@ -27,6 +27,9 @@ export function Header() {
               <Link href="/examples">Examples</Link>
             </li>
             <li>
+              <Link href="/spec">Spec</Link>
+            </li>
+            <li>
               <Link
                 className="flex gap-2 items-center"
                 href="https://github.com/specui/openui"
