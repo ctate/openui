@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SpecTitle } from "@/components/spec-title";
 
 const specs = [
   {
@@ -27,7 +28,7 @@ export default function SpecsPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       <main className="container mx-auto px-4 py-8">
-        <h2 className="text-4xl font-semibold mb-4">Specs</h2>
+        <SpecTitle title="Examples" showBadge={false} />
         <ul className="gap-4 grid grid-cols-3">
           {specs.map((spec) => (
             <li className="border border-gray-700 rounded-xl" key={spec.title}>

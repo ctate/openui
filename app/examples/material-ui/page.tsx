@@ -12,7 +12,7 @@ export default function SpecsPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       <main className="container mx-auto px-4 py-8">
-        <SpecTitle title="Material UI" />
+        <SpecTitle title="Material UI" showBadge={false} />
         <Preview spec={spec} specString={specString} />
       </main>
     </div>
