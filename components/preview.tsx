@@ -46,14 +46,14 @@ function Content({ spec }: { spec: Spec }) {
                       <div className="font-mono bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-blue-600 dark:text-blue-300">
                         {propName}
                       </div>
-                      {prop.default && (
+                      {typeof prop === "object" && prop.default && (
                         <div className="text-gray-600 dark:text-gray-400 text-xs">
                           Default: {prop.default}
                         </div>
                       )}
                     </div>
                     <div className="text-gray-700 dark:text-gray-300">
-                      {prop.description}
+                      {typeof prop === "string" ? prop : prop.description}
                     </div>
                   </div>
                 ))}

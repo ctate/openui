@@ -23,13 +23,18 @@ export const schema = {
             type: "string",
             description: "Component overview",
           },
+          example: {
+            type: "string",
+            description: "Example usage of the component",
+          },
           props: {
             type: "object",
             description: "Component props",
             patternProperties: {
               "[prop]": {
-                type: "object",
-                description: "Single prop definition",
+                type: ["string", "object"],
+                description:
+                  "Single prop definition (string for type or object for detailed definition)",
                 properties: {
                   default: {
                     type: "any",
@@ -43,10 +48,6 @@ export const schema = {
                     type: "array",
                     description: "Possible prop values for enumerated types",
                   },
-                  example: {
-                    type: "string",
-                    description: "Example usage of the prop",
-                  },
                   required: {
                     type: "boolean",
                     description: "Prop requirement status",
@@ -58,10 +59,6 @@ export const schema = {
                 },
               },
             },
-          },
-          example: {
-            type: "string",
-            description: "Example usage of the component",
           },
         },
       },

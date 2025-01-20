@@ -1,7 +1,7 @@
 import React from "react";
 
 interface SchemaProperty {
-  type: string;
+  type: string | string[];
   description?: string;
   required?: boolean;
   properties?: Record<string, SchemaProperty>;
@@ -49,8 +49,12 @@ const SchemaTable: React.FC<SchemaTableProps> = ({ schema }) => {
               )}
             </div>
           </td>
-          <td className={`py-3 px-4 ${getTypeColor(value.type)}`}>
-            <span className="font-mono text-sm">{value.type}</span>
+          <td
+            className={`py-3 px-4 ${getTypeColor(Array.isArray(value.type) ? value.type[0] : value.type)}`}
+          >
+            <span className="font-mono text-sm">
+              {Array.isArray(value.type) ? value.type.join(" | ") : value.type}
+            </span>
           </td>
           <td className="py-3 px-4 text-gray-400">{value.description}</td>
         </tr>
