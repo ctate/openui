@@ -18,6 +18,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             onClick={onClose}
             aria-label="Close mobile menu"
             className="text-white"
+            type="button"
           >
             <X size={24} />
           </button>

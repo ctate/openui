@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { Spec } from "@/interfaces/Spec";
+import { useState } from "react";
+import type { Spec } from "@/interfaces/Spec";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SharedSyntaxHighlighter } from "./shared-syntax-highlighter";
 
