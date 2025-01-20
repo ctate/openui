@@ -12,7 +12,10 @@ export function Header() {
   const pathname = usePathname();
 
   const isLinkActive = (href: string) => {
-    return pathname === href;
+    if (href === "/") {
+      return pathname === href;
+    }
+    return pathname.startsWith(href);
   };
 
   return (
