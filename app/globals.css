@@ -3,156 +3,154 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.5rem;
-  }
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 240 10% 3.9%;
+		--card: 0 0% 100%;
+		--card-foreground: 240 10% 3.9%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 240 10% 3.9%;
+		--primary: 240 5.9% 10%;
+		--primary-foreground: 0 0% 98%;
+		--secondary: 240 4.8% 95.9%;
+		--secondary-foreground: 240 5.9% 10%;
+		--muted: 240 4.8% 95.9%;
+		--muted-foreground: 240 3.8% 46.1%;
+		--accent: 240 4.8% 95.9%;
+		--accent-foreground: 240 5.9% 10%;
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 0 0% 98%;
+		--border: 240 5.9% 90%;
+		--input: 240 5.9% 90%;
+		--ring: 240 5.9% 10%;
+		--radius: 0.5rem;
+	}
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: 240 10% 3.9%;
-      --foreground: 0 0% 98%;
-      --card: 240 10% 3.9%;
-      --card-foreground: 0 0% 98%;
-      --popover: 240 10% 3.9%;
-      --popover-foreground: 0 0% 98%;
-      --primary: 0 0% 98%;
-      --primary-foreground: 240 5.9% 10%;
-      --secondary: 240 3.7% 15.9%;
-      --secondary-foreground: 0 0% 98%;
-      --muted: 240 3.7% 15.9%;
-      --muted-foreground: 240 5% 64.9%;
-      --accent: 240 3.7% 15.9%;
-      --accent-foreground: 0 0% 98%;
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 0 0% 98%;
-      --border: 240 3.7% 15.9%;
-      --input: 240 3.7% 15.9%;
-      --ring: 240 4.9% 83.9%;
-    }
-  }
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--background: 240 10% 3.9%;
+			--foreground: 0 0% 98%;
+			--card: 240 10% 3.9%;
+			--card-foreground: 0 0% 98%;
+			--popover: 240 10% 3.9%;
+			--popover-foreground: 0 0% 98%;
+			--primary: 0 0% 98%;
+			--primary-foreground: 240 5.9% 10%;
+			--secondary: 240 3.7% 15.9%;
+			--secondary-foreground: 0 0% 98%;
+			--muted: 240 3.7% 15.9%;
+			--muted-foreground: 240 5% 64.9%;
+			--accent: 240 3.7% 15.9%;
+			--accent-foreground: 0 0% 98%;
+			--destructive: 0 62.8% 30.6%;
+			--destructive-foreground: 0 0% 98%;
+			--border: 240 3.7% 15.9%;
+			--input: 240 3.7% 15.9%;
+			--ring: 240 4.9% 83.9%;
+		}
+	}
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings:
-      "rlig" 1,
-      "calt" 1;
-  }
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+		font-feature-settings: "rlig" 1, "calt" 1;
+	}
 }
 
 @layer components {
-  .prose {
-    @apply max-w-none;
-  }
+	.prose {
+		@apply max-w-none;
+	}
 
-  .prose h1,
-  .prose h2,
-  .prose h3,
-  .prose h4,
-  .prose h5,
-  .prose h6 {
-    @apply text-foreground font-bold mb-4 mt-8;
-  }
+	.prose h1,
+	.prose h2,
+	.prose h3,
+	.prose h4,
+	.prose h5,
+	.prose h6 {
+		@apply text-foreground font-medium mb-4 mt-8;
+	}
 
-  .prose h1 {
-    @apply text-4xl;
-  }
+	.prose h1 {
+		@apply text-4xl;
+	}
 
-  .prose h2 {
-    @apply text-3xl;
-  }
+	.prose h2 {
+		@apply text-3xl;
+	}
 
-  .prose h3 {
-    @apply text-2xl;
-  }
+	.prose h3 {
+		@apply text-2xl;
+	}
 
-  .prose h4 {
-    @apply text-xl;
-  }
+	.prose h4 {
+		@apply text-xl;
+	}
 
-  .prose h5 {
-    @apply text-lg;
-  }
+	.prose h5 {
+		@apply text-lg;
+	}
 
-  .prose h6 {
-    @apply text-base;
-  }
+	.prose h6 {
+		@apply text-base;
+	}
 
-  .prose p {
-    @apply mb-4;
-  }
+	.prose p {
+		@apply mb-4;
+	}
 
-  .prose ul,
-  .prose ol {
-    @apply mb-4 pl-8;
-  }
+	.prose ul,
+	.prose ol {
+		@apply mb-4 pl-8;
+	}
 
-  .prose ul {
-    @apply list-disc;
-  }
+	.prose ul {
+		@apply list-disc;
+	}
 
-  .prose ol {
-    @apply list-decimal;
-  }
+	.prose ol {
+		@apply list-decimal;
+	}
 
-  .prose li {
-    @apply mb-2;
-  }
+	.prose li {
+		@apply mb-2;
+	}
 
-  .prose a {
-    @apply text-blue-600 hover:underline;
-  }
+	.prose a {
+		@apply text-blue-600 hover:underline;
+	}
 
-  .prose blockquote {
-    @apply border-l-4 border-gray-300 pl-4 italic my-4;
-  }
+	.prose blockquote {
+		@apply border-l-4 border-gray-300 pl-4 italic my-4;
+	}
 
-  .prose code {
-    @apply bg-gray-100 rounded px-1 py-0.5 text-sm;
-  }
+	.prose code {
+		@apply bg-gray-100 rounded px-1 py-0.5 text-sm;
+	}
 
-  .prose pre {
-    @apply bg-gray-100 rounded p-4 mb-4 overflow-x-auto;
-  }
+	.prose pre {
+		@apply bg-gray-100 rounded p-4 mb-4 overflow-x-auto;
+	}
 
-  @media (prefers-color-scheme: dark) {
-    .prose a {
-      @apply text-blue-400;
-    }
+	@media (prefers-color-scheme: dark) {
+		.prose a {
+			@apply text-blue-400;
+		}
 
-    .prose blockquote {
-      @apply border-gray-700;
-    }
+		.prose blockquote {
+			@apply border-gray-700;
+		}
 
-    .prose code {
-      @apply bg-gray-800;
-    }
+		.prose code {
+			@apply bg-gray-800;
+		}
 
-    .prose pre {
-      @apply bg-gray-800;
-    }
-  }
+		.prose pre {
+			@apply bg-gray-800;
+		}
+	}
 }

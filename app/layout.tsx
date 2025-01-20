@@ -18,11 +18,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`bg-background ${GeistSans.variable}`}
+      className={`bg-background ${GeistSans.className}`}
       suppressHydrationWarning
     >
       <body
-        className={`antialiased bg-background text-foreground min-h-screen flex flex-col`}
+        className="antialiased bg-background text-foreground min-h-screen flex flex-col"
       >
         <Header />
         <main className="flex-grow">{children}</main>
