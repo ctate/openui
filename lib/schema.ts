@@ -1,67 +1,61 @@
 export const schema = {
   name: {
     type: "string",
-    description: "The name of the UI library or component set",
+    description: "UI library or component set name",
   },
   version: {
     type: "string",
-    description: "The version of the UI library or component set",
+    description: "Version of the UI library or component set",
   },
   description: {
     type: "string",
-    description: "A brief description of the UI library or component set",
+    description: "Brief overview of the UI library or component set",
   },
   components: {
     type: "object",
-    description: "An object containing all the components in the UI library",
+    description: "All components in the UI library",
     patternProperties: {
-      "[ComponentName]": {
+      "[component]": {
         type: "object",
-        description: "Definition of a single component",
+        description: "Single component definition",
         properties: {
           description: {
             type: "string",
-            description: "A brief description of the component",
+            description: "Component overview",
           },
           props: {
             type: "object",
-            description: "An object containing all the props for the component",
+            description: "Component props",
             patternProperties: {
-              "[propName]": {
+              "[prop]": {
                 type: "object",
-                description: "Definition of a single prop",
+                description: "Single prop definition",
                 properties: {
-                  type: {
-                    type: "string",
-                    description:
-                      "The data type of the prop (e.g., string, number, boolean)",
+                  default: {
+                    type: "any",
+                    description: "Default prop value",
                   },
                   description: {
                     type: "string",
-                    description:
-                      "A brief description of the prop and its purpose",
-                  },
-                  required: {
-                    type: "boolean",
-                    description:
-                      "Indicates whether the prop is required or optional",
-                  },
-                  default: {
-                    type: "any",
-                    description: "The default value of the prop, if any",
+                    description: "Prop purpose and usage",
                   },
                   enum: {
                     type: "array",
-                    description:
-                      "An array of possible values for the prop, if it's an enumerated type",
+                    description: "Possible prop values for enumerated types",
+                  },
+                  required: {
+                    type: "boolean",
+                    description: "Prop requirement status",
+                  },
+                  type: {
+                    type: "string",
+                    description: "Prop data type",
                   },
                 },
-                required: ["type", "description"],
               },
             },
           },
         },
-        required: ["description", "props"],
       },
     },
   },
