@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { GeistSans } from "geist/font/sans";
 
 export const runtime = "edge";
 
@@ -10,6 +11,13 @@ export async function GET(request: Request) {
 
   const logoUrl = new URL("/logo.png", request.url).toString();
   const logoData = await fetch(logoUrl).then((res) => res.arrayBuffer());
+
+  const fontData = await fetch(
+    new URL(
+      "node_modules/geist/dist/fonts/geist-sans/Geist-Regular.woff",
+      import.meta.url,
+    ),
+  ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
     (
@@ -23,6 +31,7 @@ export async function GET(request: Request) {
           justifyContent: "center",
           backgroundColor: "white",
           fontWeight: 600,
+          fontFamily: '"Geist Sans"',
         }}
       >
         <img
@@ -56,6 +65,14 @@ export async function GET(request: Request) {
     {
       width: 1200,
       height: 630,
+      fonts: [
+        {
+          name: "Geist Sans",
+          data: fontData,
+          style: "normal",
+          weight: 400,
+        },
+      ],
     },
   );
 }

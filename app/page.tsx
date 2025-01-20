@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "/api/og?title=OpenUI&description=AI-Native UI Standardization",
+        url: "/api/og?title=OpenUI&description=AI-Native Specification for UIs",
         width: 1200,
         height: 630,
       },
