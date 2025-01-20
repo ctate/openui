@@ -29,21 +29,23 @@ export function SharedSyntaxHighlighter({
 
   return (
     <div className="relative">
-      <SyntaxHighlighter
-        language={language}
-        style={vscDarkPlus}
-        showLineNumbers={showLineNumbers}
-        wrapLongLines={wrapLongLines}
-        customStyle={{
-          fontSize: 14,
-          margin: 0,
-          padding: "1.5rem",
-          backgroundColor: "#1E1E1E",
-          borderRadius: "0.5rem",
-        }}
-      >
-        {code}
-      </SyntaxHighlighter>
+      <div className="overflow-x-auto">
+        <SyntaxHighlighter
+          language={language}
+          style={vscDarkPlus}
+          showLineNumbers={showLineNumbers}
+          wrapLongLines={wrapLongLines}
+          customStyle={{
+            fontSize: 14,
+            margin: 0,
+            padding: "1.5rem",
+            backgroundColor: "#1E1E1E",
+            borderRadius: "0.5rem",
+          }}
+        >
+          {code}
+        </SyntaxHighlighter>
+      </div>
       <button
         onClick={copyToClipboard}
         className="absolute top-4 right-4 p-2 bg-gray-800 rounded-md hover:bg-gray-700 transition-colors"
