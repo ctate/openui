@@ -12,7 +12,7 @@ const features = [
     icon: <Repeat className="h-8 w-8" />,
     title: "AI-Native",
     description:
-      "Optimized for AI integration, enabling seamless component generation.",
+      "The best way for AI to understand your library or design system, enabling seamless integration and generation.",
   },
   {
     icon: <Zap className="h-8 w-8" />,
