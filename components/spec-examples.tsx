@@ -14,15 +14,106 @@ import spectrumSpec from "../specs/react-spectrum/openui.yaml";
 
 const librarySpecs = {
   "shadcn/ui": {
-    spec: shadcnSpec,
+    spec: `name: shadcn/ui
+version: 0.1.0
+description: A collection of re-usable components built using Radix UI and Tailwind CSS.
+
+components:
+  Button:
+    description: Displays a button or a component that looks like a button.
+    props:
+      variant:
+        type: string
+        description: The variant of the button.
+        enum:
+          - default
+          - destructive
+          - outline
+          - secondary
+          - ghost
+          - link
+      size:
+        type: string
+        description: The size of the button.
+        enum:
+          - default
+          - sm
+          - lg
+          - icon
+      asChild:
+        type: boolean
+        description: Whether to render as a child component.
+        default: false`,
     url: "/examples/shadcn-ui",
   },
   "Material UI": {
-    spec: muiSpec,
+    spec: `name: Material UI
+version: 5.0.0
+description: React components that implement Google's Material Design.
+
+components:
+  Button:
+    description: Buttons allow users to take actions, and make choices, with a single tap.
+    props:
+      variant:
+        type: string
+        description: The variant to use.
+        enum:
+          - text
+          - outlined
+          - contained
+      color:
+        type: string
+        description: The color of the component.
+        enum:
+          - primary
+          - secondary
+          - success
+          - error
+          - info
+          - warning
+      size:
+        type: string
+        description: The size of the component.
+        enum:
+          - small
+          - medium
+          - large`,
     url: "/examples/material-ui",
   },
   "Chakra UI": {
-    spec: chakraSpec,
+    spec: `name: Chakra UI
+version: 2.0.0
+description: A simple, modular and accessible component library that gives you the building blocks you need to build your React applications.
+
+components:
+  Button:
+    description: Button component is used to trigger an action or event, such as submitting a form, opening a dialog, canceling an action, or performing a delete operation.
+    props:
+      variant:
+        type: string
+        description: The visual variant of the button.
+        enum:
+          - solid
+          - outline
+          - ghost
+          - link
+      colorScheme:
+        type: string
+        description: The color scheme of the button.
+        enum:
+          - blue
+          - red
+          - green
+          - yellow
+      size:
+        type: string
+        description: The size of the button.
+        enum:
+          - xs
+          - sm
+          - md
+          - lg`,
     url: "/examples/chakra-ui",
   },
   Spectrum: {
