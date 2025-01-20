@@ -9,8 +9,7 @@ export const metadata: Metadata = {
     default: "OpenUI - AI-Native UI Standardization",
     template: "%s | OpenUI",
   },
-  description:
-    "OpenUI is an AI-native specification for standardizing UI components across different libraries and frameworks. It promotes interoperability, consistent user experiences, and enhanced AI integration by defining common properties and behaviors for UI elements.",
+  description: "AI-Native Specification for UIs",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -18,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "OpenUI",
     images: [
       {
-        url: "/api/og?title=OpenUI&description=AI-Native UI Standardization",
+        url: "/api/og?title=OpenUI&description=AI-Native Specification for UIs",
         width: 1200,
         height: 630,
       },
