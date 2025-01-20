@@ -2,9 +2,10 @@
 
 import { ExternalLink, Menu } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { MobileMenu } from "./mobile-menu";
+import { Logo } from "./logo";
+
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,14 +14,8 @@ export function Header() {
     <header className="bg-black text-white py-6">
       <div className="container flex justify-between items-center mx-auto px-4">
         <h1 className="text-3xl font-bold">
-          <Link className="flex items-center" href="/">
-            <Image
-              src="/logo.png"
-              alt="OpenUI Logo"
-              width={40}
-              height={40}
-              className="mr-2"
-            />
+          <Link className="flex gap-3 items-center" href="/">
+            <Logo size={40} color="white" />
             OpenUI
           </Link>
         </h1>
