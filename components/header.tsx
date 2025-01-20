@@ -9,7 +9,7 @@ export function Header() {
         <h1 className="text-3xl font-bold">
           <Link className="flex items-center" href="/">
             <Image
-              src="/ui-logo.png"
+              src="/logo.png"
               alt="OpenUI Logo"
               width={40}
               height={40}
