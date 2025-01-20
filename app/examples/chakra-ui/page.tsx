@@ -1,4 +1,5 @@
 import { parse } from "yaml";
+import type { Metadata } from "next";
 
 import type { Spec } from "@/interfaces/Spec";
 
@@ -8,7 +9,21 @@ import { SpecTitle } from "@/components/spec-title";
 
 const spec = parse(specString) as Spec;
 
-export default function SpecsPage() {
+export const metadata: Metadata = {
+  title: "Chakra UI Specification",
+  description: "OpenUI specification for Chakra UI components",
+  openGraph: {
+    images: [
+      {
+        url: "/api/og?title=Chakra UI Specification&description=OpenUI for Chakra UI components",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+};
+
+export default function ChakraUISpecPage() {
   return (
     <div className="min-h-screen">
       <main className="container mx-auto px-4 py-8">

@@ -6,6 +6,22 @@ import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
 import { SpecTitle } from "@/components/spec-title";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "OpenUI Specification",
+  description:
+    "The official OpenUI specification for standardizing UI components.",
+  openGraph: {
+    images: [
+      {
+        url: "/api/og?title=OpenUI Specification&description=Standardizing UI components across frameworks",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+};
 
 export default async function SpecPage() {
   const markdownContent = fs.readFileSync(

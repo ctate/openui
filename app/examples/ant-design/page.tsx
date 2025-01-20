@@ -1,4 +1,5 @@
 import { parse } from "yaml";
+import type { Metadata } from "next";
 
 import type { Spec } from "@/interfaces/Spec";
 
@@ -7,6 +8,20 @@ import { Preview } from "@/components/preview";
 import { SpecTitle } from "@/components/spec-title";
 
 const spec = parse(specString) as Spec;
+
+export const metadata: Metadata = {
+  title: "Ant Design Specification",
+  description: "OpenUI specification for Ant Design components",
+  openGraph: {
+    images: [
+      {
+        url: "/api/og?title=Ant Design Specification&description=OpenUI for Ant Design components",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+};
 
 export default function AntDesignSpecPage() {
   return (
