@@ -37,11 +37,11 @@ function Content({ spec }: { spec: Spec }) {
               </div>
             </button>
             {expanded.includes(componentName) && (
-              <div className="border-t border-gray-300 dark:border-gray-700 flex flex-col gap-4 pt-4 mt-4">
+              <div className="border-t border-gray-300 dark:border-gray-700 flex flex-col gap-4 pt-4 mt-4 bg-gray-50 dark:bg-gray-800 -mx-4 -mb-4 px-4 pb-4 rounded-b-xl">
                 {Object.entries(component.props).map(([propName, prop]) => (
                   <div className="text-sm" key={propName}>
                     <div className="flex mb-2 gap-4 items-center">
-                      <div className="font-mono bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-blue-600 dark:text-blue-300">
+                      <div className="font-mono bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-blue-600 dark:text-blue-300">
                         {propName}
                       </div>
                       {prop.default && (
