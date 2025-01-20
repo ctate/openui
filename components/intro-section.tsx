@@ -30,6 +30,29 @@ export function IntroSection() {
             </p>
           </CardContent>
         </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>AI-Native</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">
+              OpenUI is designed to be AI-native, making it the best way for AI
+              to understand and work with your UI library or design system.
+            </p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>Enhanced AI Integration</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">
+              By using OpenUI, you enable AI to better comprehend and interact
+              with your UI components, leading to more accurate and efficient
+              AI-assisted development.
+            </p>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
