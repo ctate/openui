@@ -7,9 +7,9 @@ import { Header } from "@/components/header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "OpenUI",
+  title: "OpenUI - AI-Native UI Standardization",
   description:
-    "OpenUI is a specification for standardizing UI components across different libraries and frameworks. It promotes interoperability and consistent user experiences by defining common properties and behaviors for UI elements.",
+    "OpenUI is an AI-native specification for standardizing UI components across different libraries and frameworks. It promotes interoperability, consistent user experiences, and enhanced AI integration by defining common properties and behaviors for UI elements.",
 };
 
 export default function RootLayout({

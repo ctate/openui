@@ -7,6 +7,7 @@ import { HeroSection } from "./hero-section";
 import { FeaturesGrid } from "./features-grid";
 import { InteractiveDemo } from "./interactive-demo";
 import { CallToAction } from "./call-to-action";
+import { AIIntegrationSection } from "./ai-integration-section";
 
 export default function OpenUILandingPage() {
   return (
@@ -15,6 +16,7 @@ export default function OpenUILandingPage() {
       <div className="container mx-auto px-4 py-12 space-y-24">
         <FeaturesGrid />
         <IntroSection />
+        <AIIntegrationSection />
         <InteractiveDemo />
         <SpecExamples />
         <GoalsSection />
