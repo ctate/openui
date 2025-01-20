@@ -43,6 +43,10 @@ export const schema = {
                     type: "array",
                     description: "Possible prop values for enumerated types",
                   },
+                  example: {
+                    type: "string",
+                    description: "Example usage of the prop",
+                  },
                   required: {
                     type: "boolean",
                     description: "Prop requirement status",
@@ -54,6 +58,10 @@ export const schema = {
                 },
               },
             },
+          },
+          example: {
+            type: "string",
+            description: "Example usage of the component",
           },
         },
       },
