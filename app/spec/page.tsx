@@ -10,12 +10,10 @@ export default function SpecPage() {
     "utf-8",
   );
 
-  // Remove the title and table of contents from the markdown content
-  const contentWithoutTitleAndTOC = markdownContent
-    .split("\n")
-    .slice(3)
-    .join("\n")
-    .replace(/^## Table of Contents[\s\S]*?(?=##)/m, "");
+  // Remove everything before "## 1. Introduction"
+  const contentStartingFromIntroduction = markdownContent.substring(
+    markdownContent.indexOf("## 1. Introduction"),
+  );
 
   return (
     <div className="min-h-screen">
@@ -82,7 +80,7 @@ export default function SpecPage() {
                 ),
             }}
           >
-            {contentWithoutTitleAndTOC}
+            {contentStartingFromIntroduction}
           </ReactMarkdown>
         </div>
       </main>
