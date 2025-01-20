@@ -12,6 +12,23 @@ interface SchemaTableProps {
   schema: Record<string, SchemaProperty>;
 }
 
+const getTypeColor = (type: string): string => {
+  switch (type) {
+    case "string":
+      return "text-green-500";
+    case "object":
+      return "text-blue-500";
+    case "boolean":
+      return "text-yellow-500";
+    case "array":
+      return "text-purple-500";
+    case "any":
+      return "text-gray-500";
+    default:
+      return "text-white";
+  }
+};
+
 const SchemaTable: React.FC<SchemaTableProps> = ({ schema }) => {
   const renderProperties = (
     properties: Record<string, SchemaProperty>,
@@ -27,7 +44,11 @@ const SchemaTable: React.FC<SchemaTableProps> = ({ schema }) => {
               {value.required && <span className="text-red-500 ml-1">*</span>}
             </div>
           </td>
-          <td className="py-2 px-4 border-b border-gray-700">{value.type}</td>
+          <td
+            className={`py-2 px-4 border-b border-gray-700 ${getTypeColor(value.type)}`}
+          >
+            {value.type}
+          </td>
           <td className="py-2 px-4 border-b border-gray-700">
             {value.description}
           </td>

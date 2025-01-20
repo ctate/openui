@@ -8,14 +8,14 @@ const schema = {
   components: {
     type: "object",
     patternProperties: {
-      "^[A-Za-z][A-Za-z0-9]*$": {
+      "[ComponentName]": {
         type: "object",
         properties: {
           description: { type: "string" },
           props: {
             type: "object",
             patternProperties: {
-              "^[A-Za-z][A-Za-z0-9]*$": {
+              "[propName]": {
                 type: "object",
                 properties: {
                   type: { type: "string" },
@@ -25,18 +25,6 @@ const schema = {
                   enum: { type: "array" },
                 },
                 required: ["type", "description"],
-              },
-            },
-          },
-          events: {
-            type: "object",
-            patternProperties: {
-              "^on[A-Z][A-Za-z0-9]*$": {
-                type: "object",
-                properties: {
-                  description: { type: "string" },
-                },
-                required: ["description"],
               },
             },
           },
