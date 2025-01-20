@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export function Banner() {
   return (
-    <div className="bg-yellow-400 text-black py-2 px-4 text-center">
+    <div className="bg-gray-200 text-gray-900 py-2 px-4 text-center">
       <p className="text-sm flex items-center justify-center">
-        <span className="bg-purple-600 text-white px-2 py-1 rounded-md mr-2 text-xs font-semibold">
+        <span className="bg-gray-800 text-gray-100 px-2 py-1 rounded-md mr-2 text-xs font-semibold">
           draft-01
         </span>
         This is a rough draft of OpenUI and is still in active development.

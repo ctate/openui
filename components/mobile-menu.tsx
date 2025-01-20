@@ -11,13 +11,13 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
-      <div className="bg-black h-full w-64 p-4 shadow-lg">
+      <div className="bg-gray-900 h-full w-64 p-4 shadow-lg">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-bold text-white">Menu</h2>
+          <h2 className="text-xl font-bold text-gray-100">Menu</h2>
           <button
             onClick={onClose}
             aria-label="Close mobile menu"
-            className="text-white"
+            className="text-gray-100"
             type="button"
           >
             <X size={24} />
@@ -29,7 +29,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               <Link
                 href="/"
                 onClick={onClose}
-                className="text-white hover:text-gray-300 transition-colors"
+                className="text-gray-100 hover:text-gray-300 transition-colors"
               >
                 Home
               </Link>
@@ -38,7 +38,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               <Link
                 href="/spec"
                 onClick={onClose}
-                className="text-white hover:text-gray-300 transition-colors"
+                className="text-gray-100 hover:text-gray-300 transition-colors"
               >
                 Spec
               </Link>
@@ -47,14 +47,14 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               <Link
                 href="/examples"
                 onClick={onClose}
-                className="text-white hover:text-gray-300 transition-colors"
+                className="text-gray-100 hover:text-gray-300 transition-colors"
               >
                 Examples
               </Link>
             </li>
             <li>
               <Link
-                className="flex gap-2 items-center text-white hover:text-gray-300 transition-colors"
+                className="flex gap-2 items-center text-gray-100 hover:text-gray-300 transition-colors"
                 href="https://github.com/specui/openui"
                 target="_blank"
                 onClick={onClose}
