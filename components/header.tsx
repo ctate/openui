@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -19,11 +19,11 @@ export function Header() {
   };
 
   return (
-    <header className="bg-background text-foreground py-6 border-b border-gray-200 dark:border-gray-800">
+    <header className="bg-background text-foreground py-4 border-b border-border">
       <div className="container flex justify-between items-center mx-auto px-4">
-        <h1 className="text-3xl font-bold">
+        <h1 className="text-2xl font-bold">
           <Link className="flex gap-3 items-center" href="/">
-            <Logo size={40} color="currentColor" />
+            <Logo size={32} color="currentColor" />
             OpenUI
           </Link>
         </h1>
@@ -67,12 +67,12 @@ export function Header() {
             </li>
             <li>
               <Link
-                className="flex gap-2 items-center text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
                 href="https://github.com/specui/openui"
                 target="_blank"
+                rel="noopener noreferrer"
               >
-                <span>GitHub</span>
-                <ExternalLink size={16} />
+                GitHub
               </Link>
             </li>
           </ul>

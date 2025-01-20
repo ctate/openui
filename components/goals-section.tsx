@@ -2,8 +2,8 @@ import React from "react";
 
 export function GoalsSection() {
   return (
-    <section className="mb-16">
-      <h2 className="text-3xl font-semibold mb-6">Goals of OpenUI</h2>
+    <section>
+      <h2 className="text-2xl font-semibold mb-6">Goals of OpenUI</h2>
       <ul className="space-y-4">
         <li className="flex items-start">
           <span className="font-bold mr-2 text-primary">1.</span>

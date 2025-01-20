@@ -3,7 +3,7 @@ import { SpecTitle } from "./spec-title";
 
 export function IntroSection() {
   return (
-    <section className="mb-16">
+    <section>
       <SpecTitle title="What is OpenUI?" showBadge={false} />
       <p className="max-w-2xl text-lg text-muted-foreground">
         OpenUI is a specification for standardizing UI components across
