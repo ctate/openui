@@ -33,6 +33,67 @@ export default function SpecPage() {
           </section>
 
           <section>
+            <h2 className="text-2xl font-semibold mb-4">Schema</h2>
+            <p className="mb-4">
+              The OpenUI specification follows this schema:
+            </p>
+            <pre className="bg-gray-800 p-4 rounded-lg overflow-x-auto">
+              <code className="text-sm">
+                {`{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "description": { "type": "string" },
+    "components": {
+      "type": "object",
+      "patternProperties": {
+        "^[A-Za-z][A-Za-z0-9]*$": {
+          "type": "object",
+          "properties": {
+            "description": { "type": "string" },
+            "props": {
+              "type": "object",
+              "patternProperties": {
+                "^[A-Za-z][A-Za-z0-9]*$": {
+                  "type": "object",
+                  "properties": {
+                    "type": { "type": "string" },
+                    "description": { "type": "string" },
+                    "required": { "type": "boolean" },
+                    "default": { },
+                    "enum": { "type": "array" }
+                  },
+                  "required": ["type", "description"]
+                }
+              }
+            },
+            "events": {
+              "type": "object",
+              "patternProperties": {
+                "^on[A-Z][A-Za-z0-9]*$": {
+                  "type": "object",
+                  "properties": {
+                    "description": { "type": "string" }
+                  },
+                  "required": ["description"]
+                }
+              }
+            }
+          },
+          "required": ["description", "props"]
+        }
+      }
+    }
+  },
+  "required": ["name", "version", "description", "components"]
+}`}
+              </code>
+            </pre>
+          </section>
+
+          <section>
             <h2 className="text-2xl font-semibold mb-4">
               Example Specification
             </h2>
