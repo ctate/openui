@@ -10,7 +10,7 @@ export function Footer() {
           <Heart className="inline-block h-4 w-4 text-destructive mx-1" /> by{" "}
           <Link
             href="https://ctate.dev"
-            className="underline hover:text-foreground ml-1 transition-colors"
+            className="font-bold hover:text-foreground ml-1 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
