@@ -1,7 +1,7 @@
 "use client";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useState } from "react";
 
 import { Spec } from "@/interfaces/Spec";
@@ -17,11 +17,11 @@ function Content({ spec }: { spec: Spec }) {
       <div className="flex flex-col gap-4 mt-4">
         {Object.entries(spec.components).map(([componentName, component]) => (
           <div
-            className="border border-gray-700 rounded-xl p-4"
+            className="border border-gray-700 rounded-xl p-4 bg-gray-900 shadow-lg"
             key={componentName}
           >
             <button
-              className="block text-left"
+              className="block text-left w-full"
               onClick={() => {
                 if (expanded.includes(componentName)) {
                   const newExpanded = expanded.slice();
@@ -32,18 +32,24 @@ function Content({ spec }: { spec: Spec }) {
                 }
               }}
             >
-              <div className="text-lg">{componentName}</div>
-              <div className="text-gray-500">{component.description}</div>
+              <div className="text-lg font-semibold">{componentName}</div>
+              <div className="text-gray-400">{component.description}</div>
             </button>
             {expanded.includes(componentName) && (
               <div className="border-t border-gray-700 flex flex-col gap-4 pt-4 mt-4">
                 {Object.entries(component.props).map(([propName, prop]) => (
-                  <div className="text-xs" key={propName}>
-                    <div className="flex mb-2 gap-4">
-                      <div className="font-mono pr-4">{propName}</div>
-                      {prop.default && <div>Default: {prop.default}</div>}
+                  <div className="text-sm" key={propName}>
+                    <div className="flex mb-2 gap-4 items-center">
+                      <div className="font-mono bg-gray-800 px-2 py-1 rounded text-blue-300">
+                        {propName}
+                      </div>
+                      {prop.default && (
+                        <div className="text-gray-400 text-xs">
+                          Default: {prop.default}
+                        </div>
+                      )}
                     </div>
-                    <td className="text-gray-500">{prop.description}</td>
+                    <div className="text-gray-300">{prop.description}</div>
                   </div>
                 ))}
               </div>
@@ -89,15 +95,15 @@ export function Preview({
           <Content spec={spec} />
         </TabsContent>
         <TabsContent value="spec">
-          <div className="border border-gray-700 rounded-xl">
+          <div className="border border-gray-700 rounded-xl overflow-hidden shadow-lg">
             <SyntaxHighlighter
               language="yaml"
-              style={atomDark}
+              style={vscDarkPlus}
               customStyle={{
-                fontSize: 12,
+                fontSize: 14,
                 margin: 0,
-                padding: "1rem",
-                backgroundColor: "black",
+                padding: "1.5rem",
+                backgroundColor: "#1E1E1E",
               }}
               wrapLongLines={false}
             >
@@ -106,23 +112,24 @@ export function Preview({
           </div>
         </TabsContent>
       </Tabs>
-      <div className="gap-4 hidden md:flex">
-        <div className="border border-gray-700 rounded-xl max-h-[calc(100vh-260px)] overflow-scroll w-1/2">
+      <div className="gap-6 hidden md:flex">
+        <div className="border border-gray-700 rounded-xl max-h-[calc(100vh-260px)] overflow-hidden w-1/2 shadow-lg">
           <SyntaxHighlighter
             language="yaml"
-            style={atomDark}
+            style={vscDarkPlus}
             customStyle={{
-              fontSize: 12,
+              fontSize: 14,
               margin: 0,
-              padding: "1rem",
-              backgroundColor: "black",
+              padding: "1.5rem",
+              backgroundColor: "#1E1E1E",
+              height: "100%",
             }}
             wrapLongLines={false}
           >
             {specString}
           </SyntaxHighlighter>
         </div>
-        <div className="max-h-[calc(100vh-260px)] overflow-scroll w-1/2">
+        <div className="max-h-[calc(100vh-260px)] overflow-auto w-1/2 pr-4">
           <Content spec={spec} />
         </div>
       </div>
