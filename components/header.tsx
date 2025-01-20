@@ -1,11 +1,12 @@
 "use client";
 
-import { Menu, Github } from "lucide-react";
+import { Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { MobileMenu } from "./mobile-menu";
 import { Logo } from "./logo";
+import { GitHubIcon } from "./github-icon";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -27,8 +28,8 @@ export function Header() {
             OpenUI
           </Link>
         </h1>
-        <nav className="hidden md:block">
-          <ul className="flex gap-6">
+        <nav className="hidden md:flex items-center">
+          <ul className="flex gap-6 items-center">
             <li>
               <Link
                 href="/"
@@ -67,12 +68,13 @@ export function Header() {
             </li>
             <li>
               <Link
-                className="text-muted-foreground hover:text-foreground transition-colors flex items-center"
                 href="https://github.com/specui/openui"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors flex items-center"
+                aria-label="OpenUI GitHub Repository"
               >
-                <Github size={20} aria-label="GitHub" />
+                <GitHubIcon className="mr-2" />
               </Link>
             </li>
           </ul>

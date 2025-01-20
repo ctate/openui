@@ -1,5 +1,6 @@
 import { ExternalLink, X } from "lucide-react";
 import Link from "next/link";
+import { GitHubIcon } from "./github-icon";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -57,8 +58,10 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 className="flex gap-2 items-center text-gray-100 hover:text-gray-300 transition-colors"
                 href="https://github.com/specui/openui"
                 target="_blank"
+                rel="noopener noreferrer"
                 onClick={onClose}
               >
+                <GitHubIcon />
                 <span>GitHub</span>
                 <ExternalLink size={16} />
               </Link>
