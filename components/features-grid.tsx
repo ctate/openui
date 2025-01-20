@@ -10,9 +10,9 @@ const features = [
   },
   {
     icon: <Repeat className="h-8 w-8" />,
-    title: "Interoperability",
+    title: "AI-Native",
     description:
-      "Easily switch between UI libraries without changing your core logic.",
+      "Built from the ground up with AI integration in mind for seamless component generation and interaction.",
   },
   {
     icon: <Zap className="h-8 w-8" />,

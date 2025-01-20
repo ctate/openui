@@ -10,8 +10,12 @@ export function CallToAction() {
         Join the OpenUI community and start building more consistent,
         interoperable user interfaces today.
       </p>
-      <Button asChild size="lg">
-        <Link href="https://github.com/specui/openui">View on GitHub</Link>
+      <Button
+        asChild
+        className="bg-white text-black hover:bg-white/90 dark:bg-black dark:text-white dark:hover:bg-black/90"
+        size="lg"
+      >
+        <Link href="/spec">View Spec</Link>
       </Button>
     </div>
   );
