@@ -25,17 +25,27 @@ export const metadata: Metadata = {
 
 function enhanceTableStyles(htmlContent: string): string {
   const enhancedHtml = htmlContent
-    .replace(/<table>/g, '<table class="w-full border-collapse mb-8">')
-    .replace(/<thead>/g, '<thead class="bg-gray-100 dark:bg-gray-800">')
+    .replace(
+      /<table>/g,
+      '<table class="w-full border-collapse mb-8 block md:table overflow-x-auto">',
+    )
+    .replace(
+      /<thead>/g,
+      '<thead class="bg-gray-100 dark:bg-gray-800 block md:table-header-group">',
+    )
+    .replace(/<tbody>/g, '<tbody class="block md:table-row-group">')
+    .replace(
+      /<tr>/g,
+      '<tr class="border-b dark:border-gray-700 block md:table-row">',
+    )
     .replace(
       /<th>/g,
-      '<th class="p-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300 border-b dark:border-gray-700">',
+      '<th class="p-3 text-left text-sm font-semibold text-gray-700 dark:text-gray-300 block md:table-cell">',
     )
     .replace(
       /<td>/g,
-      '<td class="p-3 text-sm text-gray-600 dark:text-gray-400 border-b dark:border-gray-700">',
-    )
-    .replace(/<tr>/g, '<tr class="hover:bg-gray-50 dark:hover:bg-gray-750">');
+      '<td class="p-3 text-sm text-gray-600 dark:text-gray-400 block md:table-cell">',
+    );
 
   return enhancedHtml;
 }
