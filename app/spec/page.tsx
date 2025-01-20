@@ -6,7 +6,7 @@ import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function SpecPage() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen">
       <main className="container mx-auto px-4 py-8">
         <SpecTitle title="OpenUI Specification" />
         <div className="space-y-8">

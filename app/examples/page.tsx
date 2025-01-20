@@ -42,7 +42,7 @@ export default function ExamplesPage() {
   );
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen">
       <main className="container mx-auto px-4 py-8">
         <SpecTitle title="OpenUI Examples" showBadge={false} />
 
@@ -76,7 +76,7 @@ export default function ExamplesPage() {
               key={spec.title}
               className="border border-gray-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-gray-500 hover:shadow-lg hover:shadow-gray-800/50"
             >
-              <Link href={spec.url} className="block p-6 h-full flex flex-col">
+              <Link href={spec.url} className="p-6 h-full flex flex-col">
                 <h3 className="text-xl font-semibold mb-2">{spec.title}</h3>
                 <p className="text-gray-400 flex-grow">{spec.description}</p>
                 <span className="text-blue-400 mt-4 inline-block">

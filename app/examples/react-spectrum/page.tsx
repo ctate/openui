@@ -10,7 +10,7 @@ const spec = parse(specString) as Spec;
 
 export default function SpecsPage() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen">
       <main className="container mx-auto px-4 py-8">
         <SpecTitle title="React Spectrum" showBadge={false} />
         <Preview spec={spec} specString={specString} />
