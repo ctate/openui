@@ -16,7 +16,7 @@ export function Header() {
   };
 
   return (
-    <header className="bg-background text-foreground py-6">
+    <header className="bg-background text-foreground py-6 border-b border-gray-200 dark:border-gray-800">
       <div className="container flex justify-between items-center mx-auto px-4">
         <h1 className="text-3xl font-bold">
           <Link className="flex gap-3 items-center" href="/">
@@ -25,14 +25,14 @@ export function Header() {
           </Link>
         </h1>
         <nav className="hidden md:block">
-          <ul className="flex gap-4">
+          <ul className="flex gap-6">
             <li>
               <Link
                 href="/"
                 className={`transition-colors ${
                   isLinkActive("/")
-                    ? "text-black dark:text-white font-medium"
-                    : "text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
+                    ? "text-primary font-medium"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 Home
@@ -43,8 +43,8 @@ export function Header() {
                 href="/spec"
                 className={`transition-colors ${
                   isLinkActive("/spec")
-                    ? "text-black dark:text-white font-medium"
-                    : "text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
+                    ? "text-primary font-medium"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 Spec
@@ -55,8 +55,8 @@ export function Header() {
                 href="/examples"
                 className={`transition-colors ${
                   isLinkActive("/examples")
-                    ? "text-black dark:text-white font-medium"
-                    : "text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
+                    ? "text-primary font-medium"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 Examples
@@ -64,7 +64,7 @@ export function Header() {
             </li>
             <li>
               <Link
-                className="flex gap-2 items-center text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+                className="flex gap-2 items-center text-muted-foreground hover:text-foreground transition-colors"
                 href="https://github.com/specui/openui"
                 target="_blank"
               >

@@ -3,9 +3,9 @@ import { SpecTitle } from "./spec-title";
 
 export function IntroSection() {
   return (
-    <section className="mb-12">
+    <section className="mb-16">
       <SpecTitle title="What is OpenUI?" showBadge={false} />
-      <p className="max-w-2xl">
+      <p className="max-w-2xl text-lg text-muted-foreground">
         OpenUI is a specification for standardizing UI components across
         different libraries and frameworks. It promotes interoperability and
         consistent user experiences by defining common properties and behaviors
