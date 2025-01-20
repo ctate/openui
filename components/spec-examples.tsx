@@ -3,13 +3,8 @@
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { Clipboard, Check } from "lucide-react";
+import { SharedSyntaxHighlighter } from "./shared-syntax-highlighter";
 
-import shadcnSpec from "../specs/shadcn/openui-sample.yaml";
-import muiSpec from "../specs/material-ui/openui-sample.yaml";
-import chakraSpec from "../specs/chakra-ui/openui-sample.yaml";
 import spectrumSpec from "../specs/react-spectrum/openui.yaml";
 
 const librarySpecs = {
@@ -124,19 +119,6 @@ components:
 
 export function SpecExamples() {
   const [activeLibrary, setActiveLibrary] = useState("shadcn/ui");
-  const [copiedStates, setCopiedStates] = useState<Record<string, boolean>>({});
-
-  const copyToClipboard = async (text: string, library: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopiedStates((prev) => ({ ...prev, [library]: true }));
-      setTimeout(() => {
-        setCopiedStates((prev) => ({ ...prev, [library]: false }));
-      }, 2000);
-    } catch (err) {
-      console.error("Failed to copy text: ", err);
-    }
-  };
 
   return (
     <section className="mb-12">
@@ -163,31 +145,7 @@ export function SpecExamples() {
         {Object.entries(librarySpecs).map(([libraryName, library]) => (
           <TabsContent key={libraryName} value={libraryName}>
             <div className="bg-gray-900 rounded-lg overflow-hidden relative shadow-lg border border-gray-700">
-              <SyntaxHighlighter
-                language="yaml"
-                style={vscDarkPlus}
-                customStyle={{
-                  fontSize: 14,
-                  margin: 0,
-                  padding: "1.5rem",
-                  backgroundColor: "transparent",
-                }}
-                wrapLongLines={false}
-              >
-                {library.spec}
-              </SyntaxHighlighter>
-              <button
-                onClick={() => copyToClipboard(library.spec, libraryName)}
-                className="absolute top-4 right-4 p-2 bg-gray-800 rounded-md hover:bg-gray-700 transition-colors"
-                aria-label="Copy to clipboard"
-                type="button"
-              >
-                {copiedStates[libraryName] ? (
-                  <Check className="h-5 w-5 text-green-500" />
-                ) : (
-                  <Clipboard className="h-5 w-5 text-white" />
-                )}
-              </button>
+              <SharedSyntaxHighlighter code={library.spec} />
             </div>
             <Link
               className="mt-4 inline-block text-blue-400 hover:underline"

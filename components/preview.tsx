@@ -1,12 +1,9 @@
 "use client";
 
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useState, useCallback } from "react";
-import { Clipboard, Check } from "lucide-react";
-
 import { Spec } from "@/interfaces/Spec";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SharedSyntaxHighlighter } from "./shared-syntax-highlighter";
 
 function Content({ spec }: { spec: Spec }) {
   const [expanded, setExpanded] = useState<string[]>([]);
@@ -71,14 +68,6 @@ export function Preview({
   specString: string;
 }) {
   const [tab, setTab] = useState<"preview" | "spec">("preview");
-  const [copied, setCopied] = useState(false);
-
-  const copyToClipboard = useCallback(() => {
-    navigator.clipboard.writeText(specString).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  }, [specString]);
 
   return (
     <>
@@ -105,63 +94,14 @@ export function Preview({
           <Content spec={spec} />
         </TabsContent>
         <TabsContent value="spec">
-          <div className="border border-gray-700 rounded-xl overflow-hidden shadow-lg relative">
-            <SyntaxHighlighter
-              language="yaml"
-              style={vscDarkPlus}
-              customStyle={{
-                fontSize: 14,
-                margin: 0,
-                padding: "1.5rem",
-                backgroundColor: "#1E1E1E",
-              }}
-              wrapLongLines={false}
-            >
-              {specString}
-            </SyntaxHighlighter>
-            <button
-              onClick={copyToClipboard}
-              className="absolute top-4 right-4 p-2 bg-gray-800 rounded-md hover:bg-gray-700 transition-colors"
-              aria-label="Copy to clipboard"
-              type="button"
-            >
-              {copied ? (
-                <Check className="h-5 w-5 text-green-500" />
-              ) : (
-                <Clipboard className="h-5 w-5 text-white" />
-              )}
-            </button>
+          <div className="border border-gray-700 rounded-xl overflow-hidden shadow-lg">
+            <SharedSyntaxHighlighter code={specString} />
           </div>
         </TabsContent>
       </Tabs>
       <div className="gap-6 hidden md:flex">
-        <div className="border border-gray-700 rounded-xl max-h-[calc(100vh-260px)] overflow-hidden w-1/2 shadow-lg relative">
-          <SyntaxHighlighter
-            language="yaml"
-            style={vscDarkPlus}
-            customStyle={{
-              fontSize: 14,
-              margin: 0,
-              padding: "1.5rem",
-              backgroundColor: "#1E1E1E",
-              height: "100%",
-            }}
-            wrapLongLines={false}
-          >
-            {specString}
-          </SyntaxHighlighter>
-          <button
-            onClick={copyToClipboard}
-            className="absolute top-4 right-4 p-2 bg-gray-800 rounded-md hover:bg-gray-700 transition-colors"
-            aria-label="Copy to clipboard"
-            type="button"
-          >
-            {copied ? (
-              <Check className="h-5 w-5 text-green-500" />
-            ) : (
-              <Clipboard className="h-5 w-5 text-white" />
-            )}
-          </button>
+        <div className="border border-gray-700 rounded-xl max-h-[calc(100vh-260px)] overflow-hidden w-1/2 shadow-lg">
+          <SharedSyntaxHighlighter code={specString} />
         </div>
         <div className="max-h-[calc(100vh-260px)] overflow-auto w-1/2 pr-4">
           <Content spec={spec} />
