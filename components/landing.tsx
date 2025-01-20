@@ -15,19 +15,19 @@ import spectrumSpec from "../specs/react-spectrum/openui.yaml";
 const librarySpecs = {
   "shadcn/ui": {
     spec: shadcnSpec,
-    url: "/specs/shadcn-ui",
+    url: "/examples/shadcn-ui",
   },
   "Material UI": {
     spec: muiSpec,
-    url: "/specs/material-ui",
+    url: "/examples/material-ui",
   },
   "Chakra UI": {
     spec: chakraSpec,
-    url: "/specs/chakra-ui",
+    url: "/examples/chakra-ui",
   },
   Spectrum: {
     spec: spectrumSpec,
-    url: "/specs/react-spectrum",
+    url: "/examples/react-spectrum",
   },
 };
 
@@ -78,7 +78,7 @@ export default function OpenUILandingPage() {
                 </TabsTrigger>
               ))}
             </TabsList>
-            <Link className="ml-4" href="/specs">
+            <Link className="ml-4" href="/examples">
               View All
             </Link>
             {Object.entries(librarySpecs).map(([libraryName, library]) => (
