@@ -162,7 +162,7 @@ export function SpecExamples() {
         </Link>
         {Object.entries(librarySpecs).map(([libraryName, library]) => (
           <TabsContent key={libraryName} value={libraryName}>
-            <div className="bg-muted rounded-lg overflow-hidden relative shadow-lg border border-border">
+            <div className="bg-gray-900 rounded-lg overflow-hidden relative shadow-lg border border-gray-700">
               <SyntaxHighlighter
                 language="yaml"
                 style={vscDarkPlus}
@@ -178,14 +178,14 @@ export function SpecExamples() {
               </SyntaxHighlighter>
               <button
                 onClick={() => copyToClipboard(library.spec, libraryName)}
-                className="absolute top-4 right-4 p-2 bg-secondary rounded-md hover:bg-secondary/80 transition-colors"
+                className="absolute top-4 right-4 p-2 bg-gray-800 rounded-md hover:bg-gray-700 transition-colors"
                 aria-label="Copy to clipboard"
                 type="button"
               >
                 {copiedStates[libraryName] ? (
                   <Check className="h-5 w-5 text-green-500" />
                 ) : (
-                  <Clipboard className="h-5 w-5 text-foreground" />
+                  <Clipboard className="h-5 w-5 text-white" />
                 )}
               </button>
             </div>

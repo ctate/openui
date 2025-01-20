@@ -32,6 +32,7 @@ function Content({ spec }: { spec: Spec }) {
                   setExpanded([...expanded, componentName]);
                 }
               }}
+              type="button"
             >
               <div className="text-lg font-semibold">{componentName}</div>
               <div className="text-gray-400">{component.description}</div>
@@ -122,6 +123,7 @@ export function Preview({
               onClick={copyToClipboard}
               className="absolute top-4 right-4 p-2 bg-gray-800 rounded-md hover:bg-gray-700 transition-colors"
               aria-label="Copy to clipboard"
+              type="button"
             >
               {copied ? (
                 <Check className="h-5 w-5 text-green-500" />
@@ -152,6 +154,7 @@ export function Preview({
             onClick={copyToClipboard}
             className="absolute top-4 right-4 p-2 bg-gray-800 rounded-md hover:bg-gray-700 transition-colors"
             aria-label="Copy to clipboard"
+            type="button"
           >
             {copied ? (
               <Check className="h-5 w-5 text-green-500" />
