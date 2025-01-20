@@ -16,11 +16,15 @@
 12. [Contributing](#contributing)
 13. [License](#license)
 
+<a name="introduction"></a>
+
 ## 1. Introduction
 
 **OpenUI** is a specification format for defining User Interface (UI) components in an abstract, implementation-agnostic manner. Inspired by specifications like **OpenAPI**, OpenUI describes UI components, their properties and behaviors in a way that can be used across various UI libraries and frameworks. This approach provides a standardized, machine-readable and human-readable model for UI libraries, facilitating a consistent means of documentation, testing and code generation.
 
 OpenUI is designed to be **AI-native**, making it easier for AI tools and assistants to parse, understand and leverage information about your UI components or design system. By offering a uniform description of components, OpenUI aids in bridging the gap between diverse frameworks, ensuring interoperability and reducing fragmentation.
+
+<a name="specification-interpretation-rfc-2119"></a>
 
 ## 2. Specification Interpretation (RFC 2119)
 
@@ -31,6 +35,8 @@ This specification uses key terms from [RFC 2119](https://www.rfc-editor.org/rfc
 - **MAY** indicates an option or possibility left to implementer discretion.
 
 These terms are used carefully within this document to clarify how certain aspects of OpenUI **MUST**, **SHOULD**, or **MAY** be interpreted or implemented.
+
+<a name="purpose-and-goals"></a>
 
 ## 3. Purpose and Goals
 
@@ -57,6 +63,8 @@ OpenUI addresses the growing need for a common language to describe UI component
 7. **Documentation + Testing + Code Generation**  
    Enable a broad ecosystem of tooling, from auto-generated docs to integrated testing frameworks.
 
+<a name="overview-and-key-features"></a>
+
 ## 4. Overview and Key Features
 
 ### AI-Native Specification
@@ -74,6 +82,8 @@ OpenUI makes it straightforward to define each component's shape, props, events 
 ### Efficiency and Universal Application
 
 By referencing a single specification file, organizations can ensure consistent APIs and behaviors across multiple implementations. OpenUI also supports various popular UI libraries and frameworks out of the box.
+
+<a name="similarities-and-differences-with-other-tools"></a>
 
 ## 5. Similarities and Differences with Other Tools
 
@@ -101,6 +111,8 @@ By referencing a single specification file, organizations can ensure consistent 
 
 OpenUI **complements** these existing tools by providing a formal specification for UI components, bridging the gap between full interactive environments (e.g., Storybook) and purely type-focused definitions (e.g., TypeScript `.d.ts` files).
 
+<a name="why-openui"></a>
+
 ## 6. Why OpenUI?
 
 1. **Consistency**  
@@ -117,6 +129,8 @@ OpenUI **complements** these existing tools by providing a formal specification 
 
 5. **AI Readiness**  
    Supplies metadata in a format that AI tools can easily parse, leading to improved automated code insights, error detection and overall development efficiency.
+
+<a name="specification-format"></a>
 
 ## 7. Specification Format
 
@@ -148,9 +162,13 @@ Within `props`, each **prop** can be a string indicating the type or an object c
 | **enum**        | array   | List of allowable values (if the prop is an enumerated type).           |
 | **required**    | boolean | Whether the prop is mandatory (e.g., `true` means it MUST be provided). |
 
+<a name="filename-and-discovery"></a>
+
 ## 8. Filename and Discovery
 
 The OpenUI specification file **MUST** be named **`openui.yaml`** or **`openui.json`**. It **SHOULD** reside at the **root** of your GitHub repository or the base path of your website. This approach makes it straightforward for both humans and automated tools to locate and parse the specification.
+
+<a name="example-specification"></a>
 
 ## 9. Example Specification
 
@@ -193,6 +211,8 @@ In this example:
 - **`size`** is another enumerated prop.
 - **`disabled`** is a boolean with a default value.
 
+<a name="best-practices"></a>
+
 ## 10. Best Practices
 
 1. **Reflect the Design System Accurately**  
@@ -210,6 +230,8 @@ In this example:
 5. **Keep the Specification Updated**  
    Update the specification whenever the codebase evolves to avoid discrepancies.
 
+<a name="future-plans"></a>
+
 ## 11. Future Plans
 
 OpenUI is an evolving specification. Planned or potential enhancements include:
@@ -225,6 +247,8 @@ OpenUI is an evolving specification. Planned or potential enhancements include:
 
 4. **Complex UI Patterns**  
    Handling dynamic scenarios such as multi-step forms, modals, or asynchronous data loading.
+
+<a name="contributing"></a>
 
 ## 12. Contributing
 
@@ -246,6 +270,8 @@ OpenUI is an open-source project and contributions are welcomed. If you wish to 
    Propose your changes for review by the maintainers.
 
 For more information, refer to the [OpenUI repository](https://github.com/ctate/openui).
+
+<a name="license"></a>
 
 ## 13. License
 
