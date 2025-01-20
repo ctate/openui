@@ -77,12 +77,27 @@ By referencing a single specification file, organizations can ensure consistent 
 
 ## 5. Similarities and Differences with Other Tools
 
-| Tool/Format                 | Primary Use                           | Similarities with OpenUI                             | Differences from OpenUI                                           |
-| --------------------------- | ------------------------------------- | ---------------------------------------------------- | ----------------------------------------------------------------- |
-| **Type Definition Files**   | Provide type safety (e.g. TypeScript) | Define data structures and interfaces for components | Do not typically include usage guidance or enumerations for props |
-| **llms.txt** (for AI usage) | Store AI prompts / metadata           | Can hold structured or partially structured data     | Not focused on UI components; specialized for LLM prompt usage    |
-| **Storybook**               | Document and preview UI components    | Emphasizes component documentation and usage         | Provides live previews; OpenUI focuses on static specification    |
-| **OpenAPI** (Swagger)       | Describe RESTful APIs                 | Structured schema, machine-readable & human-readable | Focuses on endpoints/payloads rather than UI components           |
+1. **Type Definition Files**
+
+   - **Similarities**: Both OpenUI and typical type definition files (e.g., TypeScript `.d.ts`) can define types, enumerations and interfaces in a way that tools can parse.
+   - **Differences**:
+     - Type definitions often focus on compile-time checks and may include internal or unrelated types across multiple files, without extensive usage or behavioral documentation.
+     - OpenUI, by contrast, is designed to be more concise and self-contained. It places all relevant component information (including usage examples, accessibility considerations and enumerated props) into a single, portable file. This provides a broader but more focused view of each component’s intended purpose and functionality.
+
+2. `**llms.txt**`
+
+   - **Similarities**: Can also include structured text or partial metadata for Large Language Models (LLMs).
+   - **Differences**: `llms.txt` often contains entire documentation sets or large text blocks, making them unwieldy for direct AI consumption without retrieval augmented generation (RAG). OpenUI, by contrast, is deliberately minimal and structured specifically for UI component definitions, easing both human and machine comprehension.
+
+3. **Storybook**
+
+   - **Similarities**: Provides extensive documentation for UI components and their usage patterns.
+   - **Differences**: Storybook offers live previews and interactive exploration, while OpenUI is a static, implementation-agnostic specification.
+
+4. **OpenAPI**
+
+   - **Similarities**: Both define a domain (OpenAPI for HTTP APIs, OpenUI for UI components) using a schema that is machine-readable and human-readable.
+   - **Differences**: OpenAPI is dedicated to endpoints and data payloads, whereas OpenUI focuses on user interface components and their properties.
 
 OpenUI **complements** these existing tools by providing a formal specification for UI components, bridging the gap between full interactive environments (e.g., Storybook) and purely type-focused definitions (e.g., TypeScript `.d.ts` files).
 
