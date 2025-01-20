@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu } from "lucide-react";
+import { Menu, Github } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -67,12 +67,12 @@ export function Header() {
             </li>
             <li>
               <Link
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors flex items-center"
                 href="https://github.com/specui/openui"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                GitHub
+                <Github size={20} aria-label="GitHub" />
               </Link>
             </li>
           </ul>
