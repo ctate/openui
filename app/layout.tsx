@@ -1,10 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "OpenUI - AI-Native UI Standardization",
@@ -18,9 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-background" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`bg-background ${GeistSans.variable}`}
+      suppressHydrationWarning
+    >
       <body
-        className={`${inter.className} antialiased bg-background text-foreground min-h-screen flex flex-col`}
+        className={`antialiased bg-background text-foreground min-h-screen flex flex-col`}
       >
         <Header />
         <main className="flex-grow">{children}</main>
