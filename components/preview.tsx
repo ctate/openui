@@ -15,7 +15,7 @@ function Content({ spec }: { spec: Spec }) {
       <div className="flex flex-col gap-4 mt-4">
         {Object.entries(spec.components).map(([componentName, component]) => (
           <div
-            className="border border-gray-700 rounded-xl p-4 bg-gray-900 shadow-lg"
+            className="border border-gray-300 dark:border-gray-700 rounded-xl p-4 bg-white dark:bg-gray-900 shadow-lg"
             key={componentName}
           >
             <button
@@ -32,23 +32,27 @@ function Content({ spec }: { spec: Spec }) {
               type="button"
             >
               <div className="text-lg font-semibold">{componentName}</div>
-              <div className="text-gray-400">{component.description}</div>
+              <div className="text-gray-600 dark:text-gray-400">
+                {component.description}
+              </div>
             </button>
             {expanded.includes(componentName) && (
-              <div className="border-t border-gray-700 flex flex-col gap-4 pt-4 mt-4">
+              <div className="border-t border-gray-300 dark:border-gray-700 flex flex-col gap-4 pt-4 mt-4">
                 {Object.entries(component.props).map(([propName, prop]) => (
                   <div className="text-sm" key={propName}>
                     <div className="flex mb-2 gap-4 items-center">
-                      <div className="font-mono bg-gray-800 px-2 py-1 rounded text-blue-300">
+                      <div className="font-mono bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-blue-600 dark:text-blue-300">
                         {propName}
                       </div>
                       {prop.default && (
-                        <div className="text-gray-400 text-xs">
+                        <div className="text-gray-600 dark:text-gray-400 text-xs">
                           Default: {prop.default}
                         </div>
                       )}
                     </div>
-                    <div className="text-gray-300">{prop.description}</div>
+                    <div className="text-gray-700 dark:text-gray-300">
+                      {prop.description}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -94,13 +98,13 @@ export function Preview({
           <Content spec={spec} />
         </TabsContent>
         <TabsContent value="spec">
-          <div className="border border-gray-700 rounded-xl overflow-hidden shadow-lg">
+          <div className="border border-gray-300 dark:border-gray-700 rounded-xl overflow-hidden shadow-lg">
             <SharedSyntaxHighlighter code={specString} />
           </div>
         </TabsContent>
       </Tabs>
       <div className="gap-6 hidden md:flex">
-        <div className="border border-gray-700 rounded-xl max-h-[calc(100vh-260px)] overflow-hidden w-1/2 shadow-lg">
+        <div className="border border-gray-300 dark:border-gray-700 rounded-xl max-h-[calc(100vh-260px)] overflow-hidden w-1/2 shadow-lg">
           <SharedSyntaxHighlighter code={specString} />
         </div>
         <div className="max-h-[calc(100vh-260px)] overflow-auto w-1/2 pr-4">
