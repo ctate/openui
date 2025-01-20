@@ -5,7 +5,6 @@ import { GoalsSection } from "./goals-section";
 import { DetailedIntroSection } from "./detailed-intro-section";
 import { HeroSection } from "./hero-section";
 import { FeaturesGrid } from "./features-grid";
-import { InteractiveDemo } from "./interactive-demo";
 import { CallToAction } from "./call-to-action";
 import { AIIntegrationSection } from "./ai-integration-section";
 
@@ -17,7 +16,6 @@ export default function OpenUILandingPage() {
         <FeaturesGrid />
         <IntroSection />
         <AIIntegrationSection />
-        <InteractiveDemo />
         <SpecExamples />
         <GoalsSection />
         <DetailedIntroSection />
