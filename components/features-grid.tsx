@@ -3,25 +3,25 @@ import { Layers, Repeat, Zap, Globe } from "lucide-react";
 
 const features = [
   {
-    icon: <Layers className="h-8 w-8 mb-4" />,
+    icon: <Layers className="h-8 w-8" />,
     title: "Standardization",
     description:
       "Define UI components with a common language across different libraries.",
   },
   {
-    icon: <Repeat className="h-8 w-8 mb-4" />,
+    icon: <Repeat className="h-8 w-8" />,
     title: "Interoperability",
     description:
       "Easily switch between UI libraries without changing your core logic.",
   },
   {
-    icon: <Zap className="h-8 w-8 mb-4" />,
+    icon: <Zap className="h-8 w-8" />,
     title: "Efficiency",
     description:
       "Streamline development with consistent APIs and behavior across components.",
   },
   {
-    icon: <Globe className="h-8 w-8 mb-4" />,
+    icon: <Globe className="h-8 w-8" />,
     title: "Universal",
     description:
       "Support for multiple popular UI libraries and frameworks out of the box.",
@@ -34,9 +34,11 @@ export function FeaturesGrid() {
       {features.map((feature, index) => (
         <div
           key={index}
-          className="bg-card text-card-foreground p-6 rounded-lg shadow-lg text-center"
+          className="bg-card text-card-foreground p-6 rounded-lg shadow-lg text-center flex flex-col items-center"
         >
-          {feature.icon}
+          <div className="flex items-center justify-center mb-4">
+            {feature.icon}
+          </div>
           <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
           <p className="text-muted-foreground">{feature.description}</p>
         </div>
