@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface SpecTitleProps {
   title: string;
@@ -6,10 +7,18 @@ interface SpecTitleProps {
 }
 
 export function SpecTitle({ title, showBadge = true }: SpecTitleProps) {
+  const isMobile = useIsMobile();
+
   return (
-    <h1 className="flex items-center gap-4 mb-8 text-4xl">
-      <span>{title}</span>
-      {showBadge && <Badge variant="secondary">draft-01</Badge>}
-    </h1>
+    <div
+      className={`flex ${isMobile ? "flex-col" : "items-center"} gap-4 mb-8`}
+    >
+      <h1 className="text-4xl">{title}</h1>
+      {showBadge && (
+        <Badge variant="secondary" className={isMobile ? "self-start" : ""}>
+          draft-01
+        </Badge>
+      )}
+    </div>
   );
 }

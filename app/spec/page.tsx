@@ -8,7 +8,7 @@ export default function SpecPage() {
   return (
     <div className="min-h-screen">
       <main className="container mx-auto px-4 py-8">
-        <SpecTitle title="OpenUI Specification" />
+        <SpecTitle title="OpenUI Specification" showBadge={true} />
         <div className="space-y-12">
           <section>
             <h2 className="text-3xl font-semibold mb-6">Goals of OpenUI</h2>

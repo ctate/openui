@@ -6,7 +6,7 @@
 
 # OpenUI
 
-Standardize UI libraries and Design Systems
+AI-Native Specification for UIs
 
 [![License](https://img.shields.io/github/license/ctate/openui.svg?style=flat-square)](https://github.com/ctate/openui/blob/main/LICENSE)
 

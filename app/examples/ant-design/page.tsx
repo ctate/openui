@@ -12,7 +12,7 @@ export default function AntDesignSpecPage() {
   return (
     <div className="min-h-screen">
       <main className="container mx-auto px-4 py-8">
-        <SpecTitle title="Ant Design" showBadge={false} />
+        <SpecTitle title="Ant Design" showBadge={true} />
         <p className="text-gray-600 dark:text-gray-300 mb-6">
           Ant Design is a design system for enterprise-level products. This
           specification showcases how Ant Design components are defined using
