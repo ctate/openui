@@ -1,6 +1,8 @@
 import { SpecTitle } from "@/components/spec-title";
 import SchemaTable from "@/components/schema-table";
 import { schema } from "@/lib/schema";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function SpecPage() {
   return (
@@ -46,9 +48,19 @@ export default function SpecPage() {
             <h2 className="text-2xl font-semibold mb-4">
               Example Specification
             </h2>
-            <pre className="bg-gray-800 p-4 rounded-lg overflow-x-auto">
-              <code className="text-sm">
-                {`name: Example UI Library
+            <SyntaxHighlighter
+              language="yaml"
+              style={atomDark}
+              customStyle={{
+                fontSize: 12,
+                margin: 0,
+                padding: "1rem",
+                backgroundColor: "black",
+                borderRadius: "0.5rem",
+              }}
+              wrapLongLines={false}
+            >
+              {`name: Example UI Library
 version: 1.0.0
 description: A sample UI library specification
 
@@ -70,8 +82,7 @@ components:
     events:
       onClick:
         description: Triggered when the button is clicked`}
-              </code>
-            </pre>
+            </SyntaxHighlighter>
           </section>
 
           <section>
