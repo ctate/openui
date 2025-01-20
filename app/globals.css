@@ -110,6 +110,14 @@
     @apply mb-4 pl-8;
   }
 
+  .prose ul {
+    @apply list-disc;
+  }
+
+  .prose ol {
+    @apply list-decimal;
+  }
+
   .prose li {
     @apply mb-2;
   }
