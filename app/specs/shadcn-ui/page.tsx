@@ -1,10 +1,10 @@
 import { parse } from "yaml";
 
-import { Spec } from "@/interfaces/Spec";
+import type { Spec } from "@/interfaces/Spec";
 
 import specString from "../../../specs/shadcn/openui.yaml";
-import { Preview } from "@/app/components/preview";
-import { SpecTitle } from "@/app/components/spec-title";
+import { Preview } from "@/components/preview";
+import { SpecTitle } from "@/components/spec-title";
 
 const spec = parse(specString) as Spec;
 

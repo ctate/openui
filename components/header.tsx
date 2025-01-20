@@ -1,5 +1,6 @@
-import { ExternalLink, Layers } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Header() {
   return (
@@ -7,7 +8,14 @@ export function Header() {
       <div className="container flex justify-between items-center mx-auto px-4">
         <h1 className="text-3xl font-bold">
           <Link className="flex items-center" href="/">
-            <Layers className="mr-2" /> OpenUI
+            <Image
+              src="/ui-logo.png"
+              alt="OpenUI Logo"
+              width={40}
+              height={40}
+              className="mr-2"
+            />
+            OpenUI
           </Link>
         </h1>
         <nav>

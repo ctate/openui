@@ -7,10 +7,10 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Clipboard, Check } from "lucide-react";
 
-import shadcnSpec from "../../specs/shadcn/openui-sample.yaml";
-import muiSpec from "../../specs/material-ui/openui-sample.yaml";
-import chakraSpec from "../../specs/chakra-ui/openui-sample.yaml";
-import spectrumSpec from "../../specs/react-spectrum/openui.yaml";
+import shadcnSpec from "../specs/shadcn/openui-sample.yaml";
+import muiSpec from "../specs/material-ui/openui-sample.yaml";
+import chakraSpec from "../specs/chakra-ui/openui-sample.yaml";
+import spectrumSpec from "../specs/react-spectrum/openui.yaml";
 
 const librarySpecs = {
   "shadcn/ui": {
