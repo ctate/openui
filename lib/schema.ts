@@ -19,6 +19,10 @@ export const schema = {
         type: "object",
         description: "Single component definition",
         properties: {
+          package: {
+            type: "string",
+            description: "The package or module where the component is located",
+          },
           description: {
             type: "string",
             description: "Component overview",
