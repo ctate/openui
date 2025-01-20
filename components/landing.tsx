@@ -11,8 +11,8 @@ export default function OpenUILandingPage() {
     <div className="bg-background">
       <HeroSection />
       <div className="container mx-auto px-4 py-12 space-y-24">
-        <FeaturesGrid />
         <SpecExamples />
+        <FeaturesGrid />
         <GoalsSection />
         <DetailedIntroSection />
         <CallToAction />
