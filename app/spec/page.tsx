@@ -2,56 +2,48 @@ import { SpecTitle } from "@/components/spec-title";
 import SchemaTable from "@/components/schema-table";
 
 const schema = {
-  $schema: { type: "string" },
-  type: { type: "string" },
-  properties: {
+  name: { type: "string" },
+  version: { type: "string" },
+  description: { type: "string" },
+  components: {
     type: "object",
-    properties: {
-      name: { type: "string" },
-      version: { type: "string" },
-      description: { type: "string" },
-      components: {
+    patternProperties: {
+      "^[A-Za-z][A-Za-z0-9]*$": {
         type: "object",
-        patternProperties: {
-          "^[A-Za-z][A-Za-z0-9]*$": {
+        properties: {
+          description: { type: "string" },
+          props: {
             type: "object",
-            properties: {
-              description: { type: "string" },
-              props: {
+            patternProperties: {
+              "^[A-Za-z][A-Za-z0-9]*$": {
                 type: "object",
-                patternProperties: {
-                  "^[A-Za-z][A-Za-z0-9]*$": {
-                    type: "object",
-                    properties: {
-                      type: { type: "string" },
-                      description: { type: "string" },
-                      required: { type: "boolean" },
-                      default: { type: "any" },
-                      enum: { type: "array" },
-                    },
-                    required: ["type", "description"],
-                  },
+                properties: {
+                  type: { type: "string" },
+                  description: { type: "string" },
+                  required: { type: "boolean" },
+                  default: { type: "any" },
+                  enum: { type: "array" },
                 },
-              },
-              events: {
-                type: "object",
-                patternProperties: {
-                  "^on[A-Z][A-Za-z0-9]*$": {
-                    type: "object",
-                    properties: {
-                      description: { type: "string" },
-                    },
-                    required: ["description"],
-                  },
-                },
+                required: ["type", "description"],
               },
             },
-            required: ["description", "props"],
+          },
+          events: {
+            type: "object",
+            patternProperties: {
+              "^on[A-Z][A-Za-z0-9]*$": {
+                type: "object",
+                properties: {
+                  description: { type: "string" },
+                },
+                required: ["description"],
+              },
+            },
           },
         },
+        required: ["description", "props"],
       },
     },
-    required: ["name", "version", "description", "components"],
   },
 };
 
