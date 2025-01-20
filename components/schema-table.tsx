@@ -67,7 +67,7 @@ const SchemaTable: React.FC<SchemaTableProps> = ({ schema }) => {
 
   return (
     <div className="overflow-x-auto">
-      <table className="w-full border-collapse border border-gray-700">
+      <table className="w-full border-collapse">
         <thead>
           <tr className="bg-gray-800">
             <th className="py-2 px-4 text-left">Property</th>
