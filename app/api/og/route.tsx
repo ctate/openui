@@ -22,32 +22,31 @@ export async function GET(request: Request) {
           alignItems: "center",
           justifyContent: "center",
           backgroundColor: "white",
-          fontSize: 32,
           fontWeight: 600,
         }}
       >
         <img
           src={logoData as unknown as string}
           alt="OpenUI Logo"
-          width={120}
-          height={120}
-          style={{ marginBottom: 24 }}
+          width={180}
+          height={180}
+          style={{ marginBottom: 40 }}
         />
         <div
           style={{
-            marginBottom: 24,
-            maxWidth: "80%",
+            marginBottom: 40,
+            fontSize: 60,
             textAlign: "center",
+            maxWidth: "90%",
           }}
         >
           {title}
         </div>
         <div
           style={{
-            fontSize: 24,
-            fontWeight: 400,
-            maxWidth: "80%",
+            fontSize: 36,
             textAlign: "center",
+            maxWidth: "90%",
           }}
         >
           {description}
