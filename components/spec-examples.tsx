@@ -141,7 +141,7 @@ export function SpecExamples() {
   return (
     <section className="mb-12">
       <h2 className="text-2xl font-semibold mb-4">OpenUI Examples</h2>
-      <p className="mb-4 text-gray-300">
+      <p className="mb-4 text-muted-foreground">
         Toggle between different UI libraries to see how OpenUI standardizes
         their component specifications:
       </p>
@@ -151,7 +151,7 @@ export function SpecExamples() {
             <TabsTrigger
               key={library}
               value={library}
-              className="data-[state=active]:bg-white data-[state=active]:text-black"
+              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
             >
               {library}
             </TabsTrigger>
@@ -162,7 +162,7 @@ export function SpecExamples() {
         </Link>
         {Object.entries(librarySpecs).map(([libraryName, library]) => (
           <TabsContent key={libraryName} value={libraryName}>
-            <div className="bg-gray-900 rounded-lg overflow-hidden relative shadow-lg border border-gray-700">
+            <div className="bg-muted rounded-lg overflow-hidden relative shadow-lg border border-border">
               <SyntaxHighlighter
                 language="yaml"
                 style={vscDarkPlus}
@@ -170,7 +170,7 @@ export function SpecExamples() {
                   fontSize: 14,
                   margin: 0,
                   padding: "1.5rem",
-                  backgroundColor: "#1E1E1E",
+                  backgroundColor: "transparent",
                 }}
                 wrapLongLines={false}
               >
@@ -178,14 +178,14 @@ export function SpecExamples() {
               </SyntaxHighlighter>
               <button
                 onClick={() => copyToClipboard(library.spec, libraryName)}
-                className="absolute top-4 right-4 p-2 bg-gray-800 rounded-md hover:bg-gray-700 transition-colors"
+                className="absolute top-4 right-4 p-2 bg-secondary rounded-md hover:bg-secondary/80 transition-colors"
                 aria-label="Copy to clipboard"
                 type="button"
               >
                 {copiedStates[libraryName] ? (
                   <Check className="h-5 w-5 text-green-500" />
                 ) : (
-                  <Clipboard className="h-5 w-5 text-white" />
+                  <Clipboard className="h-5 w-5 text-foreground" />
                 )}
               </button>
             </div>

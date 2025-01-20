@@ -6,7 +6,7 @@ import { DetailedIntroSection } from "./detailed-intro-section";
 
 export default function OpenUILandingPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <main className="container mx-auto px-4 py-8">
         <IntroSection />
         <SpecExamples />
