@@ -1,5 +1,5 @@
 import React from "react";
-import { Layers, Brain, Zap, Globe } from "lucide-react";
+import { Layers, Cpu, Zap, Globe } from "lucide-react";
 
 const features = [
   {
@@ -9,10 +9,10 @@ const features = [
       "Define UI components with a common language across different libraries.",
   },
   {
-    icon: <Brain className="h-8 w-8" />,
+    icon: <Cpu className="h-8 w-8" />,
     title: "AI-Native",
     description:
-      "The best way for AI to understand your library or design system, enabling seamless integration and generation.",
+      "The best way for AI to understand your library or design system.",
   },
   {
     icon: <Zap className="h-8 w-8" />,
