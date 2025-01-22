@@ -26,7 +26,7 @@ export async function getGitHubStars() {
   // Cache the new value
   localStorage.setItem(
     CACHE_KEY,
-    JSON.stringify({ stars, timestamp: Date.now() }),
+    JSON.stringify({ stars, timestamp: Date.now() })
   );
 
   return stars;
