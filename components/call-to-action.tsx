@@ -5,7 +5,7 @@ import Link from "next/link";
 export function CallToAction() {
   return (
     <div className="relative overflow-hidden py-16 px-4 rounded-lg text-center">
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-600 via-purple-500 to-green-500 opacity-80" />
+      <div className="absolute inset-0 bg-gradient-to-bl from-orange-600 via-purple-500 to-green-500 opacity-80" />
       <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20" />
       <div className="relative z-10">
