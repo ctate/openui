@@ -72,7 +72,7 @@ export function Header() {
                 href="https://github.com/specui/openui"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
+                className="border-gray-500 rounded-xl text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 aria-label="OpenUI GitHub Repository"
               >
                 <GitHubIcon className="mr-1" />
