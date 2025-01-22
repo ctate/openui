@@ -16,6 +16,7 @@ AI-Native Specification for UIs
 
 ## Table of Contents
 
+0. [Quickstart][#quickstart]
 1. [Introduction](#introduction)
 2. [Specification Interpretation (RFC 2119)](#specification-interpretation-rfc-2119)
 3. [Purpose and Goals](#purpose-and-goals)
@@ -29,6 +30,39 @@ AI-Native Specification for UIs
 11. [Future Plans](#future-plans)
 12. [Contributing](#contributing)
 13. [License](#license)
+
+<a name="quickstart"></a>
+
+## 0. Quickstart
+
+1. Create/use published component library
+2. Write OpenUI spec file for it: `openui.yaml`
+3. Ask AI to generate code using your OpenUI spec
+
+### Sample OpenUI spec
+
+**openui.yaml**
+
+```yaml file="openui.yaml"
+name: "@my-design-system/components"
+version: 1.0.0
+description: A sample UI library specification
+components:
+  Button:
+    description: A clickable button element
+    example: |
+      <Button variant="primary">
+        Click Me
+      </Button>
+    props:
+      variant:
+        type: string
+        description: The visual style of the button.
+        enum:
+          - primary
+          - secondary
+          - outline
+```
 
 <a name="introduction"></a>
 
