@@ -35,9 +35,9 @@ AI-Native Specification for UIs
 
 ## 0. Quickstart
 
-1. Create/use published component library
-2. Write OpenUI spec file for it: `openui.yaml`
-3. Ask AI to generate code using your OpenUI spec
+1. **Choose a component library.** Use an existing one or create your own.
+2. **Write an OpenUI spec.** Define your UI in an `openui.yaml` file.
+3. **Generate code with AI.** Let AI build UI code using your component library and spec.
 
 ### Sample OpenUI spec
 

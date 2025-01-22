@@ -16,6 +16,39 @@
 12. [Contributing](#contributing)
 13. [License](#license)
 
+<a name="quickstart"></a>
+
+## 0. Quickstart
+
+1. **Choose a component library.** Use an existing one or create your own.
+2. **Write an OpenUI spec.** Define your UI in an `openui.yaml` file.
+3. **Generate code with AI.** Let AI build UI code using your component library and spec.
+
+### Sample OpenUI spec
+
+**openui.yaml**
+
+```yaml file="openui.yaml"
+name: "@my-design-system/components"
+version: 1.0.0
+description: A sample UI library specification
+components:
+  Button:
+    description: A clickable button element
+    example: |
+      <Button variant="primary">
+        Click Me
+      </Button>
+    props:
+      variant:
+        type: string
+        description: The visual style of the button.
+        enum:
+          - primary
+          - secondary
+          - outline
+```
+
 <a name="introduction"></a>
 
 ## 1. Introduction
