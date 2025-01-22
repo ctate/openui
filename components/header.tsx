@@ -81,14 +81,32 @@ export function Header() {
             </li>
           </ul>
         </nav>
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle mobile menu"
-          type="button"
-        >
-          <Menu size={24} />
-        </button>
+        <nav className="flex md:hidden items-center">
+          <ul className="flex gap-6 items-center">
+            <li>
+              <Link
+                href="https://github.com/specui/openui"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground transition-colors flex items-center gap-2"
+                aria-label="OpenUI GitHub Repository"
+              >
+                <GitHubIcon className="mr-1" />
+                <GitHubStars />
+              </Link>
+            </li>
+            <li className="flex items-center">
+              <button
+                className="text-foreground"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle mobile menu"
+                type="button"
+              >
+                <Menu size={24} />
+              </button>
+            </li>
+          </ul>
+        </nav>
       </div>
       <MobileMenu
         isOpen={isMobileMenuOpen}
