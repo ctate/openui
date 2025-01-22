@@ -21,7 +21,7 @@ export function HeroSection() {
           <Button
             asChild
             variant="outline"
-            className="bg-white text-black hover:bg-white/90 hover:text-black transition-colors duration-300 group backdrop-blur-sm"
+            className="bg-white border-white text-black hover:bg-white/90 hover:text-black transition-colors duration-300 group backdrop-blur-sm"
           >
             <Link
               href="/examples"
@@ -32,7 +32,7 @@ export function HeroSection() {
           </Button>
           <Button
             asChild
-            className="bg-black text-white hover:bg-black/75 transition-colors duration-300 group"
+            className="bg-black border-black text-white dark:border-white hover:bg-black/75 transition-colors duration-300 group"
           >
             <Link
               href="/spec"

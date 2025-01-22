@@ -6,8 +6,7 @@ export function Footer() {
     <footer className="bg-background text-foreground py-6 border-t border-border">
       <div className="container mx-auto px-4 text-center">
         <p className="flex items-center justify-center text-muted-foreground">
-          Made with{" "}
-          <Heart className="inline-block h-4 w-4 text-destructive mx-1" /> by{" "}
+          Authored by{" "}
           <Link
             href="https://ctate.dev"
             className="font-bold hover:text-foreground ml-1 transition-colors"
