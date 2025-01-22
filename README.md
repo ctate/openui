@@ -16,7 +16,7 @@ AI-Native Specification for UIs
 
 ## Table of Contents
 
-0. [Quickstart][#quickstart]
+0. [Quickstart](#quickstart)
 1. [Introduction](#introduction)
 2. [Specification Interpretation (RFC 2119)](#specification-interpretation-rfc-2119)
 3. [Purpose and Goals](#purpose-and-goals)
