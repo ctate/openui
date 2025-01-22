@@ -3,7 +3,9 @@ import { Loader2 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
 export function GitHubStars() {
-  const [stars, setStars] = useState(localStorage.getItem("github_stars"));
+  const [stars, setStars] = useState(() =>
+    localStorage.getItem("github_stars")
+  );
 
   const init = useCallback(async () => {
     try {
