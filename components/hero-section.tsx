@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <div className="relative bg-black text-white overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-blue-600 to-transparent h-1/2 bottom-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-400 via-blue-900 to-transparent opacity-70 h-1/2 bottom-0" />
-      <div className="relative container mx-auto px-4 py-24 flex flex-col items-center justify-center min-h-[70vh] z-10">
+    <div className="relative bg-black text-white overflow-hidden min-h-screen flex items-center justify-center">
+      <div className="absolute inset-0 bg-gradient-to-t from-blue-600 to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-400 via-blue-900 to-transparent opacity-70" />
+      <div className="relative container mx-auto px-4 py-24 flex flex-col items-center justify-center z-10">
         <h1 className="text-5xl font-bold mb-6 text-center">
           AI-Native Specification for UIs
         </h1>
