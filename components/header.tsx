@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { MobileMenu } from "./mobile-menu";
 import { Logo } from "./logo";
 import { GitHubIcon } from "./github-icon";
+import { GitHubStars } from "./github-stars";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -71,10 +72,11 @@ export function Header() {
                 href="https://github.com/specui/openui"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors flex items-center"
+                className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2"
                 aria-label="OpenUI GitHub Repository"
               >
-                <GitHubIcon className="mr-2" />
+                <GitHubIcon className="mr-1" />
+                <GitHubStars />
               </Link>
             </li>
           </ul>
