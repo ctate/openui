@@ -1,5 +1,4 @@
 import { getGitHubStars } from "@/lib/getGitHubStars";
-import { Loader2 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
 export function GitHubStars() {
@@ -21,7 +20,7 @@ export function GitHubStars() {
   return (
     <div className="flex items-center space-x-1 text-sm">
       <span>
-        {stars ? stars : <Loader2 size={17.5} className="animate-spin" />}
+        {stars ? stars : <div className="h-[20px] w-[17.5px] bg-background" />}
       </span>
     </div>
   );
