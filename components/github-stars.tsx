@@ -3,9 +3,7 @@ import { Loader2 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
 export function GitHubStars() {
-  const [stars, setStars] = useState(() =>
-    localStorage.getItem("github_stars")
-  );
+  const [stars, setStars] = useState(0);
 
   const init = useCallback(async () => {
     try {
@@ -23,11 +21,7 @@ export function GitHubStars() {
   return (
     <div className="flex items-center space-x-1 text-sm">
       <span>
-        {stars !== null ? (
-          stars
-        ) : (
-          <Loader2 size={17.5} className="animate-spin" />
-        )}
+        {stars ? stars : <Loader2 size={17.5} className="animate-spin" />}
       </span>
     </div>
   );
